@@ -109,14 +109,6 @@ site/index.html
 | --- | --- |
 | ![论文未披露实现细节](example/implementation-omissions.jpg) | ![训练时序图](example/training-sequence-diagram.jpg) |
 
-生成网页时使用：
-
-```text
-python scripts/build_static_reader.py <analysis_dir> --force
-```
-
-不要为单篇论文手写 `site/index.html`、`site/assets/app.js` 或 `site/assets/styles.css`。如果网页展示能力不够，应修改 skill 包里的 `assets/reader-template/`，然后重新生成网页，这样改进才能被下一篇论文复用。
-
 ## 使用方式：只能在 Codex 中自然语言调用
 
 推荐做法：
@@ -126,7 +118,6 @@ python scripts/build_static_reader.py <analysis_dir> --force
 3. `example/` 中已经提供 SemiDFL 示例论文 [`semidfl-paper.pdf`](example/semidfl-paper.pdf)、示例源码 [`semidfl-code.zip`](example/semidfl-code.zip)、示例截图和示例提示词 [`prompt.txt`](example/prompt.txt)。
 4. 复现示例时，把示例论文、示例源码和 skill 压缩包一起放到空项目下，然后按 [`example/overview.jpg`](example/overview.jpg) 左侧上方展示的提示词提问即可；同一提示词也已经作为 `example/prompt.txt` 提供。
 5. 如果分析自己的论文和代码，在 Codex 对话中明确要求使用这个 skill，并提供论文 PDF、arXiv 链接或标题，以及源码仓库链接或本地源码路径。
-6. 如果只想静态分析，要明确说“不运行训练”；如果要复现实验，要说明允许安装依赖和运行脚本。
 
 示例提示词：
 
@@ -211,7 +202,6 @@ Recommended workflow:
 3. The `example/` folder includes the SemiDFL sample paper [`semidfl-paper.pdf`](example/semidfl-paper.pdf), sample source archive [`semidfl-code.zip`](example/semidfl-code.zip), result screenshots, and the sample prompt [`prompt.txt`](example/prompt.txt).
 4. To reproduce the example, place the sample paper, sample source archive, and skill zip in the empty project, then ask Codex with the prompt shown in the upper-left area of [`example/overview.jpg`](example/overview.jpg). The same prompt is also provided as `example/prompt.txt`.
 5. For your own paper and code, ask Codex to use this skill and provide the paper PDF, arXiv link or title, plus the GitHub URL or local path for the source repository.
-6. If you only want static analysis, explicitly say "do not run training"; if you want experiment reproduction, state that dependency installation and script execution are allowed.
 
 ### English Example Screenshots
 
