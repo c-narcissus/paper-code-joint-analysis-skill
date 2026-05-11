@@ -14,9 +14,9 @@
 
 感谢 Bristol 的刘欣阳同学提供的素材（SemiDFL）。
 
-### 示例效果：方法学框架图
+### 示例效果：Skill 框架图
 
-![契约驱动的可复用 Skill 方法学示意图](diagram.png)
+![Skill 框架图](diagram.png)
 
 ### 示例效果：理论到代码映射
 
@@ -174,9 +174,9 @@ The repository also includes [`contract_driven_reusable_skill_methodology.md`](c
 
 Thanks to Xinyang Liu from Bristol for providing the SemiDFL material.
 
-### English Example: Methodology Framework Diagram
+### English Example: Skill Framework Diagram
 
-![Contract-driven reusable Skill methodology diagram](diagram.png)
+![Skill framework diagram](diagram.png)
 
 This package is not a Python library, CLI tool, browser extension, or standalone web app. It must be used inside Codex.
 
