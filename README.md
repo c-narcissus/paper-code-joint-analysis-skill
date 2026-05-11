@@ -63,9 +63,9 @@ site/index.html
 
 网页总览提供论文解读、理论到代码映射、实验理解、阅读疑问与源码求证、未披露实现细节、图表和改方法指南入口。
 
-| 网页总览 | 方法学示意图 |
-| --- | --- |
-| ![SemiDFL 联合分析总览](example/overview.jpg) | ![契约驱动的可复用 Skill 方法学示意图](diagram.png) |
+![SemiDFL 联合分析总览](example/overview.jpg)
+
+![契约驱动的可复用 Skill 方法学示意图](diagram.png)
 
 ### 输出文件说明
 
@@ -205,9 +205,9 @@ Recommended workflow:
 
 ### English Example Screenshots
 
-| Overview | Methodology diagram |
-| --- | --- |
-| ![SemiDFL joint analysis overview](example/overview.jpg) | ![Contract-driven reusable Skill methodology diagram](diagram.png) |
+![SemiDFL joint analysis overview](example/overview.jpg)
+
+![Contract-driven reusable Skill methodology diagram](diagram.png)
 
 | Paper reading report | Reading questions and code evidence |
 | --- | --- |
