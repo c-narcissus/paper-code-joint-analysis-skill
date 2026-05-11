@@ -29,14 +29,6 @@
 
 注意：这个包不是 Python 库、命令行工具、浏览器插件或独立网页应用。它必须由 Codex 读取并调用；其中的脚本和模板也默认由 Codex 在项目工作目录中执行。
 
-## 语言、公式和编码要求
-
-报告和网页默认使用中文展示。论文标题、代码标识符、文件路径、命令、类名、方法名和通用缩写可以保留原文，但解释、表格说明、图例、复现缺口、验证说明和网页导航应使用中文。
-
-公式必须在网页中显示为排版后的数学公式，类似 Word 公式效果，而不是把 `\frac`、`\lambda`、`\mathcal` 这类 LaTeX 源码直接显示在正文里。skill 包已经内置 KaTeX 和 Mermaid 到 reader 模板中；生成网页后仍应由 Codex 做浏览器或 DOM 检查，确认公式已渲染且 raw LaTeX 没有作为正常内容暴露。
-
-所有模板、报告和生成网页都应是有效 UTF-8。不要交付含有中文乱码或替换字符的页面、报告或 README。新版检查脚本会把常见 mojibake 标记视为失败。
-
 ## 固定输出格式与网页复用
 
 这个 skill 的网页是可复用模板，不应该每换一篇论文就重写页面代码。新论文只需要重新生成固定格式的数据和 Markdown 文件，页面代码会直接加载这些文件。
@@ -177,8 +169,6 @@ python scripts/build_static_reader.py <analysis_dir> --force
 The repository also includes [`contract_driven_reusable_skill_methodology.md`](contract_driven_reusable_skill_methodology.md), which describes a contract-driven methodology for designing reusable Skills.
 
 This package is not a Python library, CLI tool, browser extension, or standalone web app. It must be used inside Codex.
-
-Reports and generated static readers are Chinese by default. Formulas should render as typeset math, not visible LaTeX source. The reusable reader template loads fixed artifacts such as `analysis_bundle.json`, `paper_reading_report.md`, `paper_questions_for_code.md`, `paper_code_crosswalk.md`, and `experiment_joint_reading.md`.
 
 ### English Output File Descriptions
 
