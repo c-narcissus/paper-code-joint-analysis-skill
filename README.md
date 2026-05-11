@@ -14,6 +14,10 @@
 
 感谢 Bristol 的刘欣阳同学提供的素材（SemiDFL）。
 
+### 示例效果：方法学框架图
+
+![契约驱动的可复用 Skill 方法学示意图](diagram.png)
+
 ### 示例效果：理论到代码映射
 
 ![理论到代码映射](example/theory-to-code.jpg)
@@ -65,19 +69,13 @@ site/index.html
 
 ![SemiDFL 联合分析总览](example/overview.jpg)
 
-![契约驱动的可复用 Skill 方法学示意图](diagram.png)
-
 ### 输出文件说明
 
 `analysis_bundle.json`：机器可读的结构化总索引，供网页读取各模块内容。
 
 `paper_reading_report.md`：完整论文解读报告，解释论文问题、方法、公式、流程、实验和局限。
 
-![SemiDFL 论文解读报告](example/paper-reading-report.jpg)
-
 `paper_questions_for_code.md`：论文阅读中产生的疑问，以及源码能否回答这些疑问的证据。
-
-![阅读疑问与源码求证](example/reading-questions-code-evidence.jpg)
 
 `paper_code_crosswalk.md`：论文理论、公式、算法步骤与源码文件、类、函数的对应关系。
 
@@ -89,11 +87,17 @@ site/index.html
 
 `modify_method_guide.md`：基于论文框架提出新模型或新算法时，应该优先修改的核心文件和函数。
 
-![改方法指南](example/modify-method-guide.jpg)
-
 `validation_report.md`：生成结果和网页展示的检查记录。
 
 `site/index.html`：可在 Codex 中打开的静态网页入口。
+
+### 示例效果：论文解读、阅读疑问与改方法指南
+
+| 论文解读报告 | 阅读疑问与源码求证 |
+| --- | --- |
+| ![SemiDFL 论文解读报告](example/paper-reading-report.jpg) | ![阅读疑问与源码求证](example/reading-questions-code-evidence.jpg) |
+
+![改方法指南](example/modify-method-guide.jpg)
 
 ### 示例效果：实验、实现细节与时序图
 
@@ -168,6 +172,12 @@ python scripts/build_static_reader.py <analysis_dir> --force
 
 The repository also includes [`contract_driven_reusable_skill_methodology.md`](contract_driven_reusable_skill_methodology.md), which describes a contract-driven methodology for designing reusable Skills.
 
+Thanks to Xinyang Liu from Bristol for providing the SemiDFL material.
+
+### English Example: Methodology Framework Diagram
+
+![Contract-driven reusable Skill methodology diagram](diagram.png)
+
 This package is not a Python library, CLI tool, browser extension, or standalone web app. It must be used inside Codex.
 
 ### English Output File Descriptions
@@ -206,8 +216,6 @@ Recommended workflow:
 ### English Example Screenshots
 
 ![SemiDFL joint analysis overview](example/overview.jpg)
-
-![Contract-driven reusable Skill methodology diagram](diagram.png)
 
 | Paper reading report | Reading questions and code evidence |
 | --- | --- |
