@@ -71,7 +71,9 @@ site/index.html
 
 网页总览提供论文解读、理论到代码映射、实验理解、阅读疑问与源码求证、未披露实现细节、图表和改方法指南入口。
 
-![SemiDFL 联合分析总览](example/overview.jpg)
+| 网页总览 | 方法学示意图 |
+| --- | --- |
+| ![SemiDFL 联合分析总览](example/overview.jpg) | ![契约驱动的可复用 Skill 方法学示意图](diagram.png) |
 
 ### 输出文件说明
 
@@ -107,13 +109,9 @@ site/index.html
 | --- | --- |
 | ![实验理解](example/experiment-understanding.jpg) | ![实验 use-case 映射](example/experiment-use-case-mapping.jpg) |
 
-![论文未披露实现细节](example/implementation-omissions.jpg)
-
-### 示例效果：方法学示意图与训练时序图
-
-| 方法学示意图 | 训练时序图 |
+| 论文未披露实现细节 | 训练时序图 |
 | --- | --- |
-| ![契约驱动的可复用 Skill 方法学示意图](diagram.png) | ![训练时序图](example/training-sequence-diagram.jpg) |
+| ![论文未披露实现细节](example/implementation-omissions.jpg) | ![训练时序图](example/training-sequence-diagram.jpg) |
 
 生成网页时使用：
 
@@ -217,23 +215,21 @@ Recommended workflow:
 
 ### English Example Screenshots
 
-| Overview | Paper reading report |
+| Overview | Methodology diagram |
 | --- | --- |
-| ![SemiDFL joint analysis overview](example/overview.jpg) | ![Paper reading report](example/paper-reading-report.jpg) |
+| ![SemiDFL joint analysis overview](example/overview.jpg) | ![Contract-driven reusable Skill methodology diagram](diagram.png) |
 
-| Reading questions and code evidence | Experiment understanding |
+| Paper reading report | Reading questions and code evidence |
 | --- | --- |
-| ![Reading questions and code evidence](example/reading-questions-code-evidence.jpg) | ![Experiment understanding](example/experiment-understanding.jpg) |
+| ![Paper reading report](example/paper-reading-report.jpg) | ![Reading questions and code evidence](example/reading-questions-code-evidence.jpg) |
 
-| Experiment use-case mapping | Implementation omissions |
+| Experiment understanding | Experiment use-case mapping |
 | --- | --- |
-| ![Experiment use-case mapping](example/experiment-use-case-mapping.jpg) | ![Implementation omissions](example/implementation-omissions.jpg) |
+| ![Experiment understanding](example/experiment-understanding.jpg) | ![Experiment use-case mapping](example/experiment-use-case-mapping.jpg) |
 
-### English Example: Methodology Diagram And Training Sequence Diagram
-
-| Methodology diagram | Training sequence diagram |
+| Implementation omissions | Training sequence diagram |
 | --- | --- |
-| ![Contract-driven reusable Skill methodology diagram](diagram.png) | ![Training sequence diagram](example/training-sequence-diagram.jpg) |
+| ![Implementation omissions](example/implementation-omissions.jpg) | ![Training sequence diagram](example/training-sequence-diagram.jpg) |
 
 ![Modify-method guide](example/modify-method-guide.jpg)
 
