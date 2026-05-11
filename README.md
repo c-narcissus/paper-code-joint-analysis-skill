@@ -107,11 +107,13 @@ site/index.html
 | --- | --- |
 | ![实验理解](example/experiment-understanding.jpg) | ![实验 use-case 映射](example/experiment-use-case-mapping.jpg) |
 
+![论文未披露实现细节](example/implementation-omissions.jpg)
+
+### 示例效果：方法学示意图与训练时序图
+
 | 方法学示意图 | 训练时序图 |
 | --- | --- |
 | ![契约驱动的可复用 Skill 方法学示意图](diagram.png) | ![训练时序图](example/training-sequence-diagram.jpg) |
-
-![论文未披露实现细节](example/implementation-omissions.jpg)
 
 生成网页时使用：
 
@@ -226,6 +228,8 @@ Recommended workflow:
 | Experiment use-case mapping | Implementation omissions |
 | --- | --- |
 | ![Experiment use-case mapping](example/experiment-use-case-mapping.jpg) | ![Implementation omissions](example/implementation-omissions.jpg) |
+
+### English Example: Methodology Diagram And Training Sequence Diagram
 
 | Methodology diagram | Training sequence diagram |
 | --- | --- |
