@@ -117,44 +117,6 @@ python scripts/build_static_reader.py <analysis_dir> --force
 
 不要为单篇论文手写 `site/index.html`、`site/assets/app.js` 或 `site/assets/styles.css`。如果网页展示能力不够，应修改 skill 包里的 `assets/reader-template/`，然后重新生成网页，这样改进才能被下一篇论文复用。
 
-## 长文件与 Windows 命令长度限制
-
-如果单次消息、工具参数或 API payload 太长，不要尝试突破模型或 API 的硬上限。分块不是默认动作。对于小于当前模型/API 实际可处理范围的文件，例如小于约 1 MB 的文本或 Markdown，优先保留为单个文件，并让 Codex 或脚本通过文件路径读取。
-
-真正要避免的是把整份内容塞进一条 Windows 命令、`python -c`、PowerShell here-string 或 JSON 参数里。安全模式是“短命令 + 文件路径”。
-
-只有当报告太长、模型输出会截断、或 Windows 命令行长度等工具/系统限制阻止一次性构建文件时，才推荐分块落盘：
-
-```text
-python scripts/merge_markdown_parts.py <analysis_dir>/_parts/paper_reading_report <analysis_dir>/paper_reading_report.md
-```
-
-分块只是中间构建技术，最终网页读取的固定文件名仍然不变。
-
-## 与 Gate 1 精读标准的关系
-
-这个 skill 吸收了 Gate 1 文本精读的分析思路，但不在执行时调用 `paper-toon-deep-reader`，也不继承卡通图、分镜和 PDF 生成 gate。
-
-已融入的部分包括，要求对齐 Gate 1 的完整文本报告深度：
-
-- 按知识依赖顺序写报告：问题、假设、符号、方法、公式、流程、实验、局限；
-- 对核心概念使用“直觉 -> 公式/算法 -> 具体例子 -> 局限 -> 论文自身留下的问题”的解释顺序；
-- 对复杂模块说明输入、输出、符号、维度、可训练参数、固定超参数和数据流；
-- 解释标题、相关工作缺口、作者方法选择、关键图表、实验设计逻辑和结果到结论的支撑关系；
-- 在论文解读报告中区分 `paper-stated`、`reasonable inference` 和 `not reported`；源码确认和源码差异放在后续代码相关产物中；
-- 解释关键图表和实验，而不是只列出结果；
-- 明确复现缺口、未报告细节、审稿/答辩视角和教学性总结。
-
-未融入的部分是：卡通图片生成、连续漫画分镜、图片批次审核和最终漫画 PDF 组装。这些属于视觉表达流程，不属于本 skill 的默认目标。
-
-## 依赖与安装说明
-
-使用这个 skill 本身不需要安装额外 Python 包。包内脚本只使用 Python 标准库，用于校验 `analysis_bundle.json`、检查 Markdown 产物和生成静态 reader。
-
-静态网页 reader 已随 skill 模板内置 KaTeX 和 Mermaid 资源，用来渲染公式和 UML 图；如果资源损坏或缺失，网页仍应显示可读 fallback，不应空白。用户不需要额外安装 KaTeX 或 Mermaid。
-
-论文源码仓库的依赖不属于这个 skill 包本身。只有当用户明确要求“运行实验”或“复现结果”时，Codex 才应根据目标仓库的 README、environment 文件、requirements 文件或论文说明安装依赖，并记录版本、硬件和偏差。如果用户只要求静态分析，Codex 只应检查和报告依赖，不应主动安装。
-
 ## 使用方式：只能在 Codex 中自然语言调用
 
 推荐做法：
@@ -195,7 +157,7 @@ python scripts/merge_markdown_parts.py <analysis_dir>/_parts/paper_reading_repor
 完成分析后应检查：
 
 - 是否生成 `analysis_bundle.json` 并通过 schema 校验；
-- 论文解读报告是否达到 Gate 1 风格的完整精读深度，且不混入代码映射；
+- 论文解读报告是否完整，且不混入代码映射；
 - 是否生成 `paper_questions_for_code.md`，并且每个主要疑问都有源码证据状态；
 - 公式是否以排版数学公式显示，而不是文字解释或 raw TeX；
 - 每个论文实验是否都有代码路径、命令状态和实现缺口；
@@ -211,8 +173,6 @@ python scripts/merge_markdown_parts.py <analysis_dir>/_parts/paper_reading_repor
 This package is not a Python library, CLI tool, browser extension, or standalone web app. It must be used inside Codex.
 
 Reports and generated static readers are Chinese by default. Formulas should render as typeset math, not visible LaTeX source. The reusable reader template loads fixed artifacts such as `analysis_bundle.json`, `paper_reading_report.md`, `paper_questions_for_code.md`, `paper_code_crosswalk.md`, and `experiment_joint_reading.md`.
-
-Using this skill itself requires no extra Python packages. Bundled scripts use only the Python standard library. Target-paper repository dependencies are separate and should be installed only when the user explicitly requests experiment execution.
 
 ### English Output File Descriptions
 
