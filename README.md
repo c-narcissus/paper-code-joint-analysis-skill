@@ -8,6 +8,8 @@
 
 `paper-code-joint-analysis` 是一个只能在 **Codex** 中使用的论文与开源代码联合分析 skill。它的目标不是单独阅读论文，也不是单独浏览仓库，而是把论文中的理论、公式、算法步骤、实验设置与源码中的真实类、方法、参数、命令和日志入口逐项对应起来，帮助用户用代码理解论文。
 
+附件中还提供了 [`contract_driven_reusable_skill_methodology.md`](contract_driven_reusable_skill_methodology.md)，介绍一种契约驱动的可复用 Skill 设计方法学。
+
 分析结果最后使用网页展示，是为了让用户可以直接使用 Codex 的注释功能在页面上圈选不懂的地方，并基于选中的内容继续提问。
 
 感谢 Bristol 的刘欣阳同学提供的素材（SemiDFL）。
@@ -105,9 +107,11 @@ site/index.html
 | --- | --- |
 | ![实验理解](example/experiment-understanding.jpg) | ![实验 use-case 映射](example/experiment-use-case-mapping.jpg) |
 
-| 论文未披露实现细节 | 训练时序图 |
+| 方法学示意图 | 训练时序图 |
 | --- | --- |
-| ![论文未披露实现细节](example/implementation-omissions.jpg) | ![训练时序图](example/training-sequence-diagram.jpg) |
+| ![契约驱动的可复用 Skill 方法学示意图](diagram.png) | ![训练时序图](example/training-sequence-diagram.jpg) |
+
+![论文未披露实现细节](example/implementation-omissions.jpg)
 
 生成网页时使用：
 
@@ -170,6 +174,8 @@ python scripts/build_static_reader.py <analysis_dir> --force
 
 `paper-code-joint-analysis` is a Codex-only skill for jointly analyzing a research paper and its open-source implementation. It helps a reader understand the paper through code: formulas, algorithms, method components, experiments, hidden implementation details, and modification points must be mapped to real source files, classes, methods, parameters, and commands.
 
+The repository also includes [`contract_driven_reusable_skill_methodology.md`](contract_driven_reusable_skill_methodology.md), which describes a contract-driven methodology for designing reusable Skills.
+
 This package is not a Python library, CLI tool, browser extension, or standalone web app. It must be used inside Codex.
 
 Reports and generated static readers are Chinese by default. Formulas should render as typeset math, not visible LaTeX source. The reusable reader template loads fixed artifacts such as `analysis_bundle.json`, `paper_reading_report.md`, `paper_questions_for_code.md`, `paper_code_crosswalk.md`, and `experiment_joint_reading.md`.
@@ -221,9 +227,11 @@ Recommended workflow:
 | --- | --- |
 | ![Experiment use-case mapping](example/experiment-use-case-mapping.jpg) | ![Implementation omissions](example/implementation-omissions.jpg) |
 
-| Training sequence diagram | Modify-method guide |
+| Methodology diagram | Training sequence diagram |
 | --- | --- |
-| ![Training sequence diagram](example/training-sequence-diagram.jpg) | ![Modify-method guide](example/modify-method-guide.jpg) |
+| ![Contract-driven reusable Skill methodology diagram](diagram.png) | ![Training sequence diagram](example/training-sequence-diagram.jpg) |
+
+![Modify-method guide](example/modify-method-guide.jpg)
 
 ## License
 
